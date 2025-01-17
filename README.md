@@ -26,14 +26,13 @@ sudo mysql_secure_installation
 sudo systemctl status mariadb
 ```
 ```bash
-chmod 777 /var/lib/mysql/mysql.sock
+# Update the MySQL configuration file to allow remote connections
+vi /etc/my.cnf
+
+# add these line to my.cnf
+bind-address=0.0.0.0
 ```
 ```bash
-#!/bin/bash
-
-# Update the MySQL configuration file to allow remote connections
-sudo sed -i 's/^bind-address.*/bind-address=0.0.0.0/' /etc/my.cnf
-
 # Restart MariaDB service to apply changes
 sudo systemctl restart mariadb
 
