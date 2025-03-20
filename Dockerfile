@@ -4,7 +4,7 @@ WORKDIR /app
 # Copy the application JAR
 COPY ./target/*.jar app.jar
 # Set environment variables
-ENV SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/myapplication?createDatabaseIfNotExist=true
+ENV SPRING_DATASOURCE_URL=jdbc:mysql://43.205.214.13:3306/myapplication
 ENV SPRING_DATASOURCE_USERNAME=root
 ENV SPRING_DATASOURCE_PASSWORD=1234
 # Expose port
